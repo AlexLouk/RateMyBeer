@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Wissenswertes
 
-Packagemanager: yarn
-Frontend: react-bootstrap
-Tests: jest
+Packagemanager: yarn \
+Frontend: react-bootstrap \
+Tests: jest \
 
