@@ -5,7 +5,6 @@ import logo from '../logos/Logo2.png'
 class FAQs extends Component {
   render() {
     return (
-      <div className="wrapper">
         <div className="faqs-container">
           <img src={logo} alt="RateMyBeer logo" className="logo" />
           <h1>FAQs for RateMyBeer</h1>
@@ -22,7 +21,6 @@ class FAQs extends Component {
           <h2>How can I log out?</h2>
           <p>To log out, click on your username in the top right corner of the page and select "Log Out" from the dropdown menu.</p>
         </div>
-      </div>
     )
   }
 }
