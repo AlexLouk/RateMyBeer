@@ -36,7 +36,7 @@ class NavbarComp extends Component {
                                     <Nav.Link as={Link} to={"/about"} >About</Nav.Link>
                                     <Nav.Link as={Link} to={"/rating"} >Rating</Nav.Link>
                                     <Nav.Link as={Link} to={"/user"}>User</Nav.Link>
-                                    <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
+                                    <Nav.Link as={Link} to={"/loginview"}>Login</Nav.Link>
                                     <Nav.Link as={Link} to={"/FAQs"} >FAQs</Nav.Link>
                                     <div className='logout'>
                                         <Nav.Link as={Link} to={"/logout"}>Logout</Nav.Link>
