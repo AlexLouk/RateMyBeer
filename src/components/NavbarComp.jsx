@@ -26,7 +26,7 @@ class NavbarComp extends Component {
                     <Navbar bg="light" expand="lg" >
                         <Container>
                             <Navbar.Brand as={Link} to={"/home"}>
-                                <img id='navLogo' src={logo} width='40' height='40'/>
+                                <img id='navLogo' src={logo} width='40' height='40' />
                                 RateMyBeer
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
