@@ -26,7 +26,7 @@ class NavbarComp extends Component {
                     <Navbar bg="light" expand="lg" >
                         <Container>
                             <Navbar.Brand as={Link} to={"/home"}>
-                                <img id='navLogo' src={logo} width='40' height='40'/>
+                                <img id='navLogo' src={logo} width='40' height='40' />
                                 RateMyBeer
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -36,7 +36,7 @@ class NavbarComp extends Component {
                                     <Nav.Link as={Link} to={"/about"} >About</Nav.Link>
                                     <Nav.Link as={Link} to={"/rating"} >Rating</Nav.Link>
                                     <Nav.Link as={Link} to={"/user"}>User</Nav.Link>
-                                    <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
+                                    <Nav.Link as={Link} to={"/loginview"}>Login</Nav.Link>
                                     <Nav.Link as={Link} to={"/FAQs"} >FAQs</Nav.Link>
                                     <div className='logout'>
                                         <Nav.Link as={Link} to={"/logout"}>Logout</Nav.Link>
