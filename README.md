@@ -71,7 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Wissenswertes
 
+React version: 18.2.0 \
 Packagemanager: yarn \
 Frontend: react-bootstrap \
-Tests: jest \
+Tests: jest
 
