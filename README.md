@@ -69,10 +69,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### Wissenswertes
+### Nice to know
 
 React version: 18.2.0 \
-Packagemanager: yarn \
-Frontend: react-bootstrap \
-Tests: jest
+Packagemanager: Yarn \
+Frontend: React-bootstrap \
+Backend: Express \
+Tests: Jest
 
