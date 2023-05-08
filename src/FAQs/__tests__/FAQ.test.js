@@ -1,16 +1,47 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import FAQs from './FAQs';
+import { render, screen } from '@testing-library/react';
+import FAQs from '../FAQs';
 
 describe('FAQs Component', () => {
-  it('renders the FAQs section', () => {
-    const { getByTestId } = render(<FAQs />);
-    expect(getByTestId('faq-section')).toBeInTheDocument();
+    it('contains the faqs-container', () => {
+      const {container} = render(<FAQs/>);
+      expect( container.firstChild ).toHaveClass('faqs-container');
+    });
+
+    it('contains the logo with src and alt', () => {
+      render(<FAQs/>);
+      const logo = screen.getByRole('img');
+      expect(logo).toHaveAttribute('src', 'Logo2.png');
+      expect(logo).toHaveAttribute('alt', 'RateMyBeer logo');
+    });
+
+    it('should render the FAQs header', () => {
+      render(<FAQs />);
+      const header = screen.getByRole('heading', { level: 1, name: 'FAQs for RateMyBeer' });
+      expect(header).toBeInTheDocument();
+    });
+  
+    it('should render the "How can I rate a beer?" question', () => {
+      render(<FAQs />);
+      const question = screen.getByRole('heading', { level: 2, name: 'How can I rate a beer?' });
+      expect(question).toBeInTheDocument();
+    });
+  
+    it('should render the "How can I add a new beer to the database?" question', () => {
+      render(<FAQs />);
+      const question = screen.getByRole('heading', { level: 2, name: 'How can I add a new beer to the database?' });
+      expect(question).toBeInTheDocument();
+    });
+  
+    it('should render the "How can I edit my profile?" question', () => {
+      render(<FAQs />);
+      const question = screen.getByRole('heading', { level: 2, name: 'How can I edit my profile?' });
+      expect(question).toBeInTheDocument();
+    });
+  
+    it('should render the "How can I log out?" question', () => {
+      render(<FAQs />);
+      const question = screen.getByRole('heading', { level: 2, name: 'How can I log out?' });
+      expect(question).toBeInTheDocument();
+    });
   });
 
-  it('renders all the FAQs questions', () => {
-    const { getAllByTestId } = render(<FAQs />);
-    const faqQuestions = getAllByTestId('faq-question');
-    expect(faqQuestions.length).toBe(3);
-  });
-});
