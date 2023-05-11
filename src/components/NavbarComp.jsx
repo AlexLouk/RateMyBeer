@@ -51,7 +51,7 @@ class NavbarComp extends Component {
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/user" element={<User />} />
-                        <Route path="/rating" element={<RatingView />} />
+                        <Route path="/rating" element={<Rating />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/FAQs" element={<FAQs />} />
 
