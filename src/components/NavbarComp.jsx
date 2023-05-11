@@ -25,7 +25,7 @@ class NavbarComp extends Component {
                 <div>
                     <Navbar bg="light" expand="lg" >
                         <Container>
-                            <Navbar.Brand as={Link} to={"/home"}>
+                            <Navbar.Brand as={Link} to={"/"}>
                                 <img id='navLogo' src={logo} width='40' height='40'/>
                                 RateMyBeer
                             </Navbar.Brand>
