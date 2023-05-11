@@ -1,4 +1,4 @@
-name: frontend test CI
+name: frontend test CI.
 
 on: [push]
 
