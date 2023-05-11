@@ -5,7 +5,7 @@ import Home from '../home/Home';
 import User from '../user/User';
 import RatingView from '../rating/ratingView';
 import About from '../about/About';
-import LoginView from '../login/LoginView'
+import Login from '../login/Login';
 import FAQs from '../FAQs/FAQs'
 import './NavbarComp.css'
 import {
@@ -36,7 +36,7 @@ class NavbarComp extends Component {
                                     <Nav.Link as={Link} to={"/about"} >About</Nav.Link>
                                     <Nav.Link as={Link} to={"/rating"} >Rating</Nav.Link>
                                     <Nav.Link as={Link} to={"/user"}>User</Nav.Link>
-                                    <Nav.Link as={Link} to={"/loginview"}>Login</Nav.Link>
+                                    <Nav.Link as={Link} to={"/login"}>Login</Nav.Link>
                                     <Nav.Link as={Link} to={"/FAQs"} >FAQs</Nav.Link>
                                     <div className='logout'>
                                         <Nav.Link as={Link} to={"/logout"}>Logout</Nav.Link>
@@ -52,7 +52,7 @@ class NavbarComp extends Component {
                         <Route path="/about" element={<About />} />
                         <Route path="/user" element={<User />} />
                         <Route path="/rating" element={<RatingView />} />
-                        <Route path="/loginview" element={<LoginView />} />
+                        <Route path="/login" element={<Login />} />
                         <Route path="/FAQs" element={<FAQs />} />
 
                     </Routes>
