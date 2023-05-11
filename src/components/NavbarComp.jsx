@@ -26,13 +26,13 @@ class NavbarComp extends Component {
                     <Navbar bg="light" expand="lg" >
                         <Container>
                             <Navbar.Brand as={Link} to={"/home"}>
-                                <img id='navLogo' src={logo} width='40' height='40' />
+                                <img id='navLogo' src={logo} width='40' height='40'/>
                                 RateMyBeer
                             </Navbar.Brand>
                             <Navbar.Toggle aria-controls="basic-navbar-nav" />
                             <Navbar.Collapse id="basic-navbar-nav">
                                 <Nav className="me-auto">
-                                    <Nav.Link as={Link} to={"/home"} >Home</Nav.Link>
+                                    <Nav.Link as={Link} to={"/"} >Home</Nav.Link>
                                     <Nav.Link as={Link} to={"/about"} >About</Nav.Link>
                                     <Nav.Link as={Link} to={"/rating"} >Rating</Nav.Link>
                                     <Nav.Link as={Link} to={"/user"}>User</Nav.Link>
@@ -48,7 +48,7 @@ class NavbarComp extends Component {
                 </div>
                 <div>
                     <Routes>
-                        <Route path="/home" element={<Home />} />
+                        <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/user" element={<User />} />
                         <Route path="/rating" element={<RatingView />} />

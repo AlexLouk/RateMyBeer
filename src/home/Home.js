@@ -4,12 +4,7 @@ import './Home.css';
 class News extends Component {
   render() {
     return (
-      <div className="con">
-        <div className='header'>
-          <div className='title'>
-            <h1>RateMyBeer News</h1>
-          </div>
-        </div>
+      <div className="home-container">
         <div className='body'>
           <div className='news'>
             {/*Box 1*/}
@@ -54,7 +49,7 @@ class News extends Component {
               </div>
             </div>
           </div>
-          <hr className='hr-style'/>
+          <hr className='hr-style' />
         </div>
       </div>
     );
