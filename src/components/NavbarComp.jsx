@@ -3,7 +3,7 @@ import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import logo from '../logos/favicon-32x32.png';
 import Home from '../home/Home';
 import User from '../user/User';
-import RatingView from '../rating/ratingView';
+import Rating from '../rating/Rating';
 import About from '../about/About';
 import LoginView from '../login/LoginView'
 import FAQs from '../FAQs/FAQs'
@@ -51,7 +51,7 @@ class NavbarComp extends Component {
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/user" element={<User />} />
-                        <Route path="/rating" element={<RatingView />} />
+                        <Route path="/rating" element={<Rating />} />
                         <Route path="/loginview" element={<LoginView />} />
                         <Route path="/FAQs" element={<FAQs />} />
 
