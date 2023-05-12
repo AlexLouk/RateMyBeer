@@ -14,7 +14,7 @@ describe('FAQs Component', () => {
       expect(logo).toHaveAttribute('alt', 'RateMyBeer logo');
     });
 
-    it('should render the FAQs header', () => {
+    it('should wrender the FAQs header', () => {
       render(<FAQs />);
       const header = screen.getByRole('heading', { level: 1, name: 'FAQs for RateMyBeer' });
       expect(header).toBeInTheDocument();
