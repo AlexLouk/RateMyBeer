@@ -22,7 +22,7 @@ class NavbarComp extends Component {
     render() {
         return (
             <Router>
-                <div>
+                <div className='navbar'>
                     <Navbar bg="light" expand="lg" >
                         <Container>
                             <Navbar.Brand as={Link} to={"/"}>
