@@ -1,56 +1,56 @@
+import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
+import './rating.css'
 
 export const rating = () => {
   return (
-    <Row xs={1} md={2} className="g-4">
-      {Array.from({ length: 1 }).map((_, idx) => (
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="./beer/augustinerHell.jpg" />
+    <div>
+      <div className='ratingBody'>
+        <div className='cardBody'>
+          {/*Card 1*/}
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK1njt_Dp9inaJf7Te0ViGPCbjunnWWwXo6w&usqp=CAU" />
             <Card.Body>
-              <Card.Title>Augustiner Hell</Card.Title>
+              <Card.Title>Augustiner</Card.Title>
               <Card.Text>
-              Brillant strohgelbes Lager mit seidigem weißem Schaumkragen zeigt sich ein Aroma, das trocken malzaromatisch, 
-              frisch getreidig nach knusprigen Cornflakes und etwas Honig, mit frischen grasigen und floralen (Zitronenmelisse) 
-              Akzenten von Hopfen in der Nase liegt.
+               Ein besonders mildes, spritziges, lang gelagertes und vor allem erfrischendes Bier.
               </Card.Text>
+              <Button variant="primary">Rate the Beer</Button>
             </Card.Body>
           </Card>
-        </Col>
-      ))}
-      {Array.from({ length: 1 }).map((_, idx) => (
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="./beer/augustinerHell.jpg" />
+        </div>
+        <div className='cardBody'>
+          {/*Card 2*/}
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://www.getraenkedienst.com/media/image/4f/c5/31/Tegernseer_Hell_20_x_0_5l.jpg" />
             <Card.Body>
-              <Card.Title>Augustiner Hell</Card.Title>
+              <Card.Title>Tegernseer Hell</Card.Title>
               <Card.Text>
-              Brillant strohgelbes Lager mit seidigem weißem Schaumkragen zeigt sich ein Aroma, das trocken malzaromatisch, 
-              frisch getreidig nach knusprigen Cornflakes und etwas Honig, mit frischen grasigen und floralen (Zitronenmelisse) 
-              Akzenten von Hopfen in der Nase liegt.
+              Das typisch bayerische helle Vollbier. Gebraut nach dem bayerischen Reinheitsgebot.
               </Card.Text>
+              <Button variant="primary">Rate the Beer</Button>
             </Card.Body>
           </Card>
-        </Col>
-      ))}
-      {Array.from({ length: 1 }).map((_, idx) => (
-        <Col>
-          <Card>
-            <Card.Img variant="top" src="beer/augustinerHell.jpg" />
+        </div>
+        <div className='cardBody'>
+          {/*Card 3*/}
+          <Card style={{ width: '18rem' }}>
+            <Card.Img variant="top" src="https://www.getraenke-frieling.de/wp-content/uploads/2021/02/frueh-koelsch-24x033l.png" />
             <Card.Body>
-              <Card.Title>Spaten Hell</Card.Title>
+              <Card.Title>Früh Kölsch</Card.Title>
               <Card.Text>
-              Brillant strohgelbes Lager mit seidigem weißem Schaumkragen zeigt sich ein Aroma, das trocken malzaromatisch, 
-              frisch getreidig nach knusprigen Cornflakes und etwas Honig, mit frischen grasigen und floralen (Zitronenmelisse) 
-              Akzenten von Hopfen in der Nase liegt.
+              Das beliebte Bier der Kölner ist mit seinem lecker süffigen Geschmack die kölsche Spezialität.
               </Card.Text>
+              <Button variant="primary">Rate the Beer</Button>
             </Card.Body>
           </Card>
-        </Col>
-      ))}
-    </Row>
+          
+        </div>
+      
+
+     
+      </div>
+    </div>
   );
 }
 
