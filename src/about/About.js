@@ -5,8 +5,7 @@ import logo from '../logos/Logo2.png';
 class About extends Component {
     render() {
         return (
-            <div className="wrapper">
-                <div className="faqs-container">
+                <div className="about-container">
                     <img src={logo} alt="RateMyBeer logo" className="logo" />
                     <h1>About RateMyBeer</h1>
                     <p>RateMyBeer is a community-driven platform for beer enthusiasts to share and discover new beers.</p>
@@ -19,7 +18,6 @@ class About extends Component {
                     </ul>
                     <p>Feel free to contact us at info@ratemybeer.com if you have any questions or feedback.</p>
                 </div>
-            </div>
         );
     }
 }
