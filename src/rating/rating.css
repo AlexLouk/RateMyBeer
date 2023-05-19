@@ -1,12 +1,29 @@
+.con {
+  /*height: max-content;*/
+  /*background-color: aqua;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.ratingBody{
+  /*background-color: blue;*/
+  display: flex;
+  flex-direction: column;
+}
 
-.ratingBody {
-    display: flex;
-    padding: 10px;
-    justify-content: center;
-  }
+.carouselBody{
+  /*background-color: aquamarine;*/
+}
 
 .cardBody{
-    padding: 2px;
-    margin-top: 1rem;
+  /*background-color: brown;*/
+  display: flex;
+  padding: 1rem;
+}
+
+.my-carousel-image{
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
 }
