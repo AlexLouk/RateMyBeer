@@ -63,7 +63,7 @@ class News extends Component {
               </div>
             </div>
           </div>
-          <hr className='hr-style'/>
+          <hr className='hr-style' />
         </div>
       </div>
     );

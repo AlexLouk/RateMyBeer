@@ -1,4 +1,4 @@
-.faqs-container {
+.about-container {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -9,22 +9,22 @@
   color: #fff;
 }
 
-.faqs-container h1 {
+.about-container h1 {
   font-size: 48px;
   margin-bottom: 30px;
 }
 
-.faqs-container h2 {
+.about-container h2 {
   font-size: 36px;
   margin-bottom: 20px;
 }
 
-.faqs-container p {
+.about-container p {
   font-size: 24px;
   margin-bottom: 30px;
 }
 
-.faqs-container h2:not(:first-child) {
+.about-container h2:not(:first-child) {
   margin-top: 60px;
   padding-top: 30px;
   border-top: 1px solid #fff;
