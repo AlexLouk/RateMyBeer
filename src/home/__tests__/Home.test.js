@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import Home from '../Home';
 
 describe('Home Component', () => {
-    it('contains the home-container', () => {
+    it('contains the con', () => {
       const {container} = render(<Home/>);
-      expect( container.firstChild ).toHaveClass('home-container');
+      expect( container.firstChild ).toHaveClass('con');
     });
 
     it('contains news-boxes', () => {

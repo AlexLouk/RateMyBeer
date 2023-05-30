@@ -1,0 +1,78 @@
+
+.aboutcon{
+    /*background-color: aqua;*/
+    height: max-content;
+    display: block;
+}
+
+.upperinfo{
+    display: flex;
+    width: 100%;
+    height: 300px;
+}
+
+.infoleft{
+    /*background-color: blue;*/
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-left: 10rem;
+}
+
+.inforight{
+    /*background-color: beige;*/
+    width: 50%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 1.3rem;
+    margin-right: 10rem;
+}
+
+.inforightbott{
+    /*background-color: beige;*/
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 2rem;
+    margin-right: 10rem;
+}
+
+.member{
+    /*background-color: brown;*/
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottinfo{
+    /*background-color: blueviolet;*/
+    display: flex;
+    height: 300px;
+    width: 100%;
+}
+
+/* Horizontal Rule-Stil */
+.hr-style-about {
+    width: 75%;
+    margin-left: 12.5%;
+    color: black;
+}
+
+.bigp{
+    font-size: 62px;
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.smallp{
+    font-weight: 450;
+}
