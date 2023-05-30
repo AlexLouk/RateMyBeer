@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
-import './Home.css';
+import './home.css';
 
 class News extends Component {
   render() {
