@@ -1,0 +1,24 @@
+.faqs-container{
+  display: block;
+}
+
+.topright{
+  width: 50%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+  margin-right: 10rem;
+}
+
+.body{
+  width: 100%;
+  /*background-color: aquamarine;*/
+}
+
+.accordion{
+  width: 75%;
+  /*background-color: bisque;*/
+}

@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 class About extends Component {
     render() {
         return (
-            <div className='aboutcon'>
+            <div className='about-container'>
                 <div className='upperinfo'>
                     <div className='infoleft'><p className='bigp'><span style={{ color: '#55555' }}>At RateMyBeer,</span> <span style={{ color: '#a5673f' }}> it's all about the passion for beer</span></p></div>
                     <div className='inforight'><p className='smallp'>Discover a variety of beer styles from around the world, rate your favorites, and get recommendations from fellow members. Our forum provides a space for discussion and exchange about all things beer.</p></div>
