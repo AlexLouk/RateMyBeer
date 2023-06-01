@@ -5,6 +5,7 @@ import User from './user/User';
 import Rating from './rating/Rating';
 import About from './about/About';
 import Login from './login/Login';
+import Register from './login/Register';
 import FAQs from './FAQs/FAQs';
 import {
   BrowserRouter as Router,
@@ -23,8 +24,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/user" element={<User />} />
           <Route path="/rating" element={<Rating />} />
+          <Route path="/FAQs" element={<FAQs />} />\
           <Route path="/login" element={<Login />} />
-          <Route path="/FAQs" element={<FAQs />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </Router>
