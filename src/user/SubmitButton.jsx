@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import './Styles.css'
+import './User.css'
+
+//TODO check warum diese Komponente im Projekt ist. Die wird nirgendwo benutzt.
 
 function SubmitButton() {
   const [show, setShow] = useState(false);

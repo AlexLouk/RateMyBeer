@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from '../logos/faceicon.png';
-import './styles.css';
+//TODO Splitt die LoginRegister.css in getrennte .css für Login und Register
+import './LoginRegister.css';
 
 const Register = () => {
   const [email, setEmail] = useState('');

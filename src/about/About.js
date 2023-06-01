@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './about.css';
+import './About.css';
 import logo from '../logos/Logo2.png';
 import Card from 'react-bootstrap/Card';
 
