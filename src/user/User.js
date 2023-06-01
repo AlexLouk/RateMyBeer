@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import SubmitButton from './SubmitButton';
-import './Styles.css'
+import './User.css'
 import '../App.css'
 import logo from '../logos/Logo2.png'
 

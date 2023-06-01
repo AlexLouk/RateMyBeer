@@ -10,8 +10,15 @@ import './Navbar.css'
 
 class Navigation extends Component {
 
+    // TODO muss später aus dem backend kommen damit man den User in der Navigationsleiste sieht sonst ist er immer ausgeblendet!
+    state = {
+        isLoggedIn: false, 
+      };
 
     render() {
+
+        const { isLoggedIn } = this.state;
+
         return (
             <Navbar bg="light" >
                 <Navbar.Brand className='ml-auto' as={Link} to={'/'}>
@@ -26,7 +33,7 @@ class Navigation extends Component {
                             <Nav.Link className='nav-link-mid' as={Link} to={'/rating'}>Rating</Nav.Link>
                             <Nav.Link className='nav-link-mid' as={Link} to={'/about'} >About</Nav.Link>
                             <Nav.Link className='nav-link-mid' as={Link} to={'/faqs'}>FAQs</Nav.Link>
-                            <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>User</Nav.Link>
+                            {isLoggedIn && <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>User</Nav.Link>}
                         </Nav>
                     </div>
                     <div className='rightBlock'>

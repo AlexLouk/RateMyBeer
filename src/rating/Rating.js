@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
-import './rating.css'
+import './Rating.css'
 
 export const rating = () => {
   return (

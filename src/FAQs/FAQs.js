@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './faq.css'
+import './FAQs.css'
 import logo from '../logos/Logo2.png'
 import Accordion from 'react-bootstrap/Accordion';
 
