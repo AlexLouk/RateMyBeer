@@ -9,10 +9,34 @@ const Register = () => {
   const [pass, setPass] = useState('');
   const [name, setName] = useState('');
 
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    console.log(email, name, pass);
-  }
+  
+    try {
+      const response = await fetch('http://localhost:3001/user/addUser', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user_email: email,
+          user_password: pass,
+          user_name: name,
+        }),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        console.log('User created:', data);
+      } else {
+        const errorData = await response.json();
+        console.error('Error creating user:', errorData);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  
 
   return (
     <div className="wrapper">
