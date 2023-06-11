@@ -13,7 +13,7 @@ const Register = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch('http://localhost:3001/user/addUser', {
+      const response = await fetch('http://localhost:3001/auth/addUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
