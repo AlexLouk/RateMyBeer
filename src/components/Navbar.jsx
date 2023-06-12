@@ -12,8 +12,8 @@ class Navigation extends Component {
 
     // TODO muss später aus dem backend kommen damit man den User in der Navigationsleiste sieht sonst ist er immer ausgeblendet!
     state = {
-        isLoggedIn: false, 
-      };
+        isLoggedIn: false,
+    };
 
     render() {
 
@@ -33,14 +33,15 @@ class Navigation extends Component {
                             <Nav.Link className='nav-link-mid' as={Link} to={'/rating'}>Rating</Nav.Link>
                             <Nav.Link className='nav-link-mid' as={Link} to={'/about'} >About</Nav.Link>
                             <Nav.Link className='nav-link-mid' as={Link} to={'/faqs'}>FAQs</Nav.Link>
+                            <Nav.Link className='nav-link-mid' as={Link} to={'/game'}>Game</Nav.Link>
                             {isLoggedIn && <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>User</Nav.Link>}
                         </Nav>
                     </div>
                     <div className='rightBlock'>
-                    <Nav className="ms-auto">
-                        <Nav.Link className='nav-link-right' as={Link} to={'/login'}>Login</Nav.Link>
-                        <Nav.Link className='nav-link-right' as={Link} to={'/register'}>Register</Nav.Link>
-                    </Nav>
+                        <Nav className="ms-auto">
+                            <Nav.Link className='nav-link-right' as={Link} to={'/login'}>Login</Nav.Link>
+                            <Nav.Link className='nav-link-right' as={Link} to={'/register'}>Register</Nav.Link>
+                        </Nav>
                     </div>
                 </Navbar.Collapse>
             </Navbar>

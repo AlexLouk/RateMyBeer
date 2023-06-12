@@ -7,6 +7,7 @@ import About from './about/About';
 import Login from './login/Login';
 import Register from './login/Register';
 import FAQs from './FAQs/FAQs';
+import Game from './game/game';
 import {
   BrowserRouter as Router,
   Routes,
@@ -27,6 +28,7 @@ function App() {
           <Route path="/FAQs" element={<FAQs />} />\
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/game" element={<Game />} />
         </Routes>
       </div>
     </Router>
