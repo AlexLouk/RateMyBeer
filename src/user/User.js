@@ -1,8 +1,6 @@
 import React, { Component, useContext, useEffect, useState } from 'react';
-import SubmitButton from './SubmitButton';
 import './User.css'
 import '../App.css'
-import logo from '../logos/Logo2.png'
 import { Button } from 'react-bootstrap';
 import { AppContext } from '../AppContext';
 import { useNavigate } from 'react-router-dom';
