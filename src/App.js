@@ -1,5 +1,5 @@
 import './App.css';
-import Navbar from './components/Navbar';
+import Navigation from './components/Navbar';
 import Home from './home/Home';
 import User from './user/User';
 import Rating from './rating/Rating';
@@ -12,22 +12,65 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { AppContext } from './AppContext';
+import { useEffect, useState } from 'react';
 
-function App() {
+function App() {  
+  const defaultLoginInfo = {
+    user_id: null,
+    user_name: null,
+    user_email: null,
+    token: null
+  }
+  const [loginInfo, setLoginInfo] = useState(JSON.parse(localStorage.getItem("rmb_user_data") || "false") || defaultLoginInfo)
 
+  useEffect(() => {
+    if (loginInfo.token == null) return
+
+    (async () => {
+      const response = await fetch('http://localhost:3001/login/validate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          token: loginInfo.token
+        }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data.valid ? "Token valid" : "Token Invalid")
+
+        if (!data.valid) {
+          localStorage.removeItem('rmb_user_data')
+          setLoginInfo(defaultLoginInfo)
+          alert("Session expired, please log in again.")
+        }
+      } else {
+        const errorData = await response.json();
+        console.error('Error:', errorData);
+      }
+    })()
+  }, [])
+  
   return (
     <Router>
       <div>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/user" element={<User />} />
-          <Route path="/rating" element={<Rating />} />
-          <Route path="/FAQs" element={<FAQs />} />\
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
+        <AppContext.Provider value={{
+          loginInfo, setLoginInfo, defaultLoginInfo
+        }}>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/user" element={<User />} />
+            <Route path="/rating" element={<Rating />} />
+            <Route path="/FAQs" element={<FAQs />} />\
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </AppContext.Provider>
       </div>
     </Router>
   );

@@ -1,16 +1,58 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../logos/faceicon.png';
 //TODO Splitt die LoginRegister.css in getrennte .css für Login und Register
 import './LoginRegister.css';
+import { AppContext } from "../AppContext";
 
 const Login = () => {
+  const { loginInfo, setLoginInfo } = useContext(AppContext);
+
+  const navigate = useNavigate();
+  
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleLoginSubmit = (e) => {
+  useEffect(() => {
+    if (loginInfo.token != null) navigate('/user')
+  }, [loginInfo])
+
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    console.log(email);
+    try {
+      setLoading("Logging in...")
+      const response = await fetch('http://localhost:3001/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          user_email: email,
+          user_password: pass,
+        }),
+      });
+  
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Logged in: ', data);
+        
+        localStorage.setItem('rmb_user_data', JSON.stringify(data));
+        setLoginInfo(data);
+        // navigate('/user')
+        
+        setErrorMessage("");
+      } else {
+        const errorData = await response.json();
+        console.error('Error logging in:', errorData);
+        setErrorMessage(errorData.error)
+      }
+      setLoading(false)
+    } catch (error) {
+      console.error('Error:', error);
+      setErrorMessage(error.message)
+    }
   }
 
   return (
@@ -23,10 +65,11 @@ const Login = () => {
           <div className="auth-form-container">
             <form className="login-form" onSubmit={handleLoginSubmit}>
               <label htmlFor="email">Email</label>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="beermail@gmail.com" id="email" name="email" />
+              <input required value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="beermail@gmail.com" id="email" name="email" />
               <label htmlFor="password">Password</label>
-              <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="" id="password" name="password" />
-              <button>Log In</button>
+              <input required value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="" id="password" name="password" />
+              <button disabled={loading}>{loading || "Log in"}</button>
+              <p className="error-tx">{errorMessage}</p>
             </form>
             <Link to='/register' className="link-btn" onClick={() => console.log("Don't have an account yet?")}>Don't have an account yet?</Link>
           </div>

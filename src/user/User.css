@@ -11,6 +11,7 @@
   margin-bottom: 20px;
 }
 
+.logout-form,
 .change-password-form,
 .change-name-form,
 .delete-account-form {
@@ -54,6 +55,10 @@ button {
 .change-name-button {
   background-color: #8bc34a;
   color: white;
+}
+
+button[class^=change-]:disabled {
+  opacity: 0.5;
 }
 
 .delete-account-button {

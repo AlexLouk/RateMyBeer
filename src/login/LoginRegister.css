@@ -50,6 +50,11 @@ button {
 
 }
 
+.error-tx {
+    font-weight: bold;
+    color: red;
+}
+
 .link-btn {
     background: none;
     color: white;
