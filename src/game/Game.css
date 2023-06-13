@@ -1,0 +1,113 @@
+.answer-item {
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+    list-style-type: none;
+    /* Entfernt die Aufzählungspunkte */
+}
+
+p {
+    text-align: center;
+    margin-top: 50px;
+    font-size: x-large;
+
+}
+
+.answer-item.selected button {
+    background-color: #f3a846;
+    /* Bierfarbe für ausgewählten Button */
+    color: #fff;
+    /* Weißer Text für ausgewählten Button */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.check-answer-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f3c23a;
+    /* Kräftigeres Gelb */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    /* Zentriert die Schaltfläche */
+    margin: 20px auto;
+    /* Zentriert die Schaltfläche und fügt einen Abstand hinzu */
+}
+
+.answer-feedback {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+.next-question-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f3c23a;
+    /* Kräftigeres Gelb */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    /* Zentriert die Schaltfläche */
+    margin: 20px auto;
+    /* Zentriert die Schaltfläche und fügt einen Abstand hinzu */
+}
+
+.answer-button {
+    margin-right: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #f3a846;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Weitere Stilregeln */
+.con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ratingBody {
+    display: flex;
+    flex-direction: column;
+}
+
+.carouselBody {
+    /* Füge deine individuellen Stilregeln hier hinzu */
+}
+
+.cardBody {
+    display: flex;
+    padding: 1rem;
+}
+
+.my-carousel-image {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+}

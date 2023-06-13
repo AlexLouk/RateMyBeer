@@ -7,6 +7,7 @@ import About from './about/About';
 import Login from './login/Login';
 import Register from './login/Register';
 import FAQs from './FAQs/FAQs';
+import Game from './game/Game';
 import {
   BrowserRouter as Router,
   Routes,
@@ -15,7 +16,7 @@ import {
 import { AppContext } from './AppContext';
 import { useEffect, useState } from 'react';
 
-function App() {  
+function App() {
   const defaultLoginInfo = {
     user_id: null,
     user_name: null,
@@ -53,7 +54,7 @@ function App() {
       }
     })()
   }, [])
-  
+
   return (
     <Router>
       <div>
@@ -69,6 +70,7 @@ function App() {
             <Route path="/FAQs" element={<FAQs />} />\
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/game" element={<Game />} />
           </Routes>
         </AppContext.Provider>
       </div>

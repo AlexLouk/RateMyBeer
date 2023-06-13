@@ -29,15 +29,16 @@ const Navigation = (props) => {
                         <Nav.Link className='nav-link-mid' as={Link} to={'/rating'}>Rating</Nav.Link>
                         <Nav.Link className='nav-link-mid' as={Link} to={'/about'} >About</Nav.Link>
                         <Nav.Link className='nav-link-mid' as={Link} to={'/faqs'}>FAQs</Nav.Link>
+                        <Nav.Link className='nav-link-mid' as={Link} to={'/game'}>Quiz</Nav.Link>
                     </Nav>
                 </div>
                 <div className='rightBlock'>
-                <Nav className="ms-auto">
-                    {isLoggedIn ? <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>{loginInfo.user_name}</Nav.Link>
-                    : <><Nav.Link className='nav-link-right' as={Link} to={'/login'}>Login</Nav.Link>
-                    <Nav.Link className='nav-link-right' as={Link} to={'/register'}>Register</Nav.Link></>
-                    }
-                </Nav>
+                    <Nav className="ms-auto">
+                        {isLoggedIn ? <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>{loginInfo.user_name}</Nav.Link>
+                            : <><Nav.Link className='nav-link-right' as={Link} to={'/login'}>Login</Nav.Link>
+                                <Nav.Link className='nav-link-right' as={Link} to={'/register'}>Register</Nav.Link></>
+                        }
+                    </Nav>
                 </div>
             </Navbar.Collapse>
         </Navbar>
