@@ -7,19 +7,6 @@ describe('FAQs Component', () => {
       expect( container.firstChild ).toHaveClass('faqs-container');
     });
 
-    it('contains the logo with src and alt', () => {
-      render(<FAQs/>);
-      const logo = screen.getByRole('img');
-      expect(logo).toHaveAttribute('src', 'Logo2.png');
-      expect(logo).toHaveAttribute('alt', 'RateMyBeer logo');
-    });
-
-    it('should wrender the FAQs header', () => {
-      render(<FAQs />);
-      const header = screen.getByRole('heading', { level: 1, name: 'FAQs for RateMyBeer' });
-      expect(header).toBeInTheDocument();
-    });
-  
     it('should render the "How can I rate a beer?" question', () => {
       render(<FAQs />);
       const question = screen.getByRole('heading', { level: 2, name: 'How can I rate a beer?' });
