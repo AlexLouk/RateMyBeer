@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './about.css';
-import logo from '../logos/Logo2.png';
 import Card from 'react-bootstrap/Card';
 
 
@@ -18,7 +17,7 @@ class About extends Component {
                         <Card.Body>
                         <Card.Title>Taner Görgün</Card.Title>
                             <Card.Text style={{ marginTop: '0.5rem' }}>
-                                CEO of RMBeer & Facebook
+                                Cancled
                             </Card.Text>
                         </Card.Body>
                     </Card>
@@ -36,7 +35,7 @@ class About extends Component {
                         <Card.Body>
                             <Card.Title>Alexandros Loukaridis</Card.Title>
                             <Card.Text style={{ marginTop: '0.5rem' }}>
-                                Softwareentwickler
+                                CEO of RMBeer & Facebook
                             </Card.Text>
                         </Card.Body>
                     </Card>

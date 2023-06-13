@@ -7,29 +7,47 @@ describe('About Component', () => {
       expect( container.firstChild ).toHaveClass('about-container');
     });
 
-    it('contains the logo with src and alt', () => {
-      render(<About/>);
-      const logo = screen.getByRole('img');
-      expect(logo).toHaveAttribute('src', 'Logo2.png');
-      expect(logo).toHaveAttribute('alt', 'RateMyBeer logo');
+    it('contains the upperinfo', () => {
+      const {container} = render(<About/>);
+        const upperinfo = container.querySelector('.upperinfo');
+        expect(upperinfo).toBeInTheDocument();
     });
 
-    it('should render the About header', () => {
-      render(<About />);
-      const header = screen.getByRole('heading', { level: 1, name: 'About RateMyBeer' });
-      expect(header).toBeInTheDocument();
+    it('upperinfo contains the left and right info', () => {
+      const {container} = render(<About/>);
+      const upperinfo = container.querySelector('.upperinfo');
+      const leftinfo = upperinfo.querySelector('.infoleft'); 
+      const rightinfo = upperinfo.querySelector('.inforight');
+      expect(leftinfo).toBeInTheDocument();
+      expect(rightinfo).toBeInTheDocument();
     });
-  
-    it('should render Our Team', () => {
-      render(<About />);
-      const question = screen.getByRole('heading', { level: 2, name: 'Our Team' });
-      expect(question).toBeInTheDocument();
+
+    it('contains the member', () => {
+      const {container} = render(<About/>);
+      const member = container.querySelector('.member');          
+      expect(member).toBeInTheDocument();
     });
-  
-    it('should render the ul', () => {
-      render(<About />);
-      const question = screen.getByRole('list', { name: ''});
-      expect(question).toBeInTheDocument();
+
+    it('member contains Card', () => {
+      const {container} = render(<About/>);
+      const member = container.querySelector('.member');
+      const card = member.querySelector('.card');
+      expect(card).toBeInTheDocument();
+    });
+
+    it('contains the bottinfo', () => {
+      const {container} = render(<About/>);
+      const bottinfo = container.querySelector('.bottinfo');
+      expect(bottinfo).toBeInTheDocument();
+    });
+
+    it('bottinfo contains', () =>{
+      const {container} = render(<About/>);
+      const bottinfo = container.querySelector('.bottinfo');
+      const bottleft = bottinfo.querySelector('.infoleft');
+      const bottright = bottinfo.querySelector('.inforightbott');
+      expect(bottleft).toBeInTheDocument();
+      expect(bottright).toBeInTheDocument();
     });
   });
 
