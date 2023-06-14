@@ -127,7 +127,9 @@ describe("Login", () => {
   it('renders login form with email and password inputs', () => {
     render(
       <MemoryRouter>
-        <Login />
+        <AppContext.Provider value={{ loginInfo: {}, setLoginInfo: jest.fn() }}>
+          <Login />
+        </AppContext.Provider>
       </MemoryRouter>
     );
 
