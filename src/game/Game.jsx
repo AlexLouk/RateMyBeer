@@ -15,13 +15,16 @@ const Game = () => {
         try {
             const response = await fetch('http://localhost:3001/game/questions');
             const data = await response.json();
-            setCurrentQuestion(data[0]);
+            const randomIndex = Math.floor(Math.random() * data.length);
+            const randomQuestion = data[randomIndex];
+            setCurrentQuestion(randomQuestion);
             setIsAnswerCorrect(null);
             setSelectedAnswer(null);
         } catch (error) {
             console.error('Error fetching current question:', error);
         }
     };
+
 
     const checkAnswer = () => {
         if (selectedAnswer !== null) {
@@ -45,9 +48,7 @@ const Game = () => {
 
     return (
         <div>
-            <h1></h1>
             <p>{currentQuestion.question}</p>
-            <h2></h2>
             {isAnswerCorrect !== null && (
                 <p className={`answer-feedback ${isAnswerCorrect ? 'correct' : 'incorrect'}`}>
                     {isAnswerCorrect ? 'Correct answer!' : 'Incorrect answer!'}
