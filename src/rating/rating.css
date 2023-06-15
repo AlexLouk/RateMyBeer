@@ -18,9 +18,11 @@
 
 .cardBody{
   /*background-color: brown;*/
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   padding: 1rem;
 }
+
 
 .my-carousel-image{
   width: 400px;

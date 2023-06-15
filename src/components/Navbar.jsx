@@ -34,6 +34,7 @@ const Navigation = (props) => {
                 </div>
                 <div className='rightBlock'>
                     <Nav className="ms-auto">
+                        {loginInfo.user_is_admin && <Nav.Link className='nav-link-right' as={Link} to={'/admin'}>Admin Panel</Nav.Link>}
                         {isLoggedIn ? <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>{loginInfo.user_name}</Nav.Link>
                             : <><Nav.Link className='nav-link-right' as={Link} to={'/login'}>Login</Nav.Link>
                                 <Nav.Link className='nav-link-right' as={Link} to={'/register'}>Register</Nav.Link></>
