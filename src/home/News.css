@@ -1,0 +1,9 @@
+.news-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-container > div {
+    width: 50%;
+}

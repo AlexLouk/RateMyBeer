@@ -1,0 +1,35 @@
+.beers-sections-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.beers-section {
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.beers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.beers-container > div {
+    width: 75%;
+}
+
+.rating-star {
+    /* fontSize: 42, , cursor: "pointer", userSelect: "none"; */
+    font-size: 42px;
+    color: "grey";
+    cursor: pointer;
+    user-select: none;
+}
+.rating-star:hover {
+    -webkit-text-stroke: 2px yellow;
+}

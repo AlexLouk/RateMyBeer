@@ -2,16 +2,46 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 import './rating.css'
+import { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../AppContext';
+import { Link } from 'react-router-dom';
 
-export const rating = () => {
+
+const Rating = () => {
+  const { loginInfo } = useContext(AppContext)
+  const [beersList, setBeersList] = useState(false)
+
+  const loadBeers = async () => {
+    setBeersList(false)
+    const response = await fetch(`http://localhost:3001/beers?approved=true`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    });
+    
+    if (response.ok) {
+        const data = await response.json();
+        setBeersList(data)
+    } else {
+        const errorData = await response.json();
+        console.error('Error:', errorData);
+        alert("Error: " + (errorData.error || errorData.message))
+    }
+  }
+
+  useEffect(() => {
+    loadBeers()
+  }, [])
+
+  
   return (
     <div className='con'>
-      <div className='ratingBody'>
+      	<div className='ratingBody'>
         <div className='carouselBody'>
 
 
 
-          {/*Carousel*/}
           <Carousel variant="dark">
             {/*Item One*/}
             <Carousel.Item>
@@ -55,8 +85,20 @@ export const rating = () => {
 
 
         <div className='cardBody'>
-          {/*Card 1*/}
-          <Card style={{ width: '18rem', margin: '0.25rem'}}>
+
+          {beersList ? beersList.map(beer => {
+            return <Link to={"/beers/"+beer.beer_id} key={beer.beer_id}><Card style={{ width: '18rem', height:'25rem', margin: '0.25rem'}}>
+              <Card.Img variant="top" height={250} style={{objectFit: "cover"}} src={beer.beer_image} />
+              <Card.Body>
+                <Card.Title>{beer.beer_name}</Card.Title>
+              </Card.Body>
+			  <Card.Footer>
+                <Button variant="primary">Rate the Beer</Button>
+			  </Card.Footer>
+            </Card></Link>
+          }) : "Loading beers..."}
+
+          {/* <Card style={{ width: '18rem', margin: '0.25rem'}}>
             <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK1njt_Dp9inaJf7Te0ViGPCbjunnWWwXo6w&usqp=CAU" />
             <Card.Body>
               <Card.Title>Augustiner</Card.Title>
@@ -66,7 +108,7 @@ export const rating = () => {
               <Button variant="primary">Rate the Beer</Button>
             </Card.Body>
           </Card>
-          {/*Card 2*/}
+
           <Card style={{ width: '18rem', margin: '0.25rem'}}>
             <Card.Img variant="top" src="https://www.getraenkedienst.com/media/image/4f/c5/31/Tegernseer_Hell_20_x_0_5l.jpg" />
             <Card.Body>
@@ -77,7 +119,7 @@ export const rating = () => {
               <Button variant="primary">Rate the Beer</Button>
             </Card.Body>
           </Card>
-          {/*Card 3*/}
+
           <Card style={{ width: '18rem', margin: '0.25rem'}}>
             <Card.Img variant="top" src="https://www.getraenke-frieling.de/wp-content/uploads/2021/02/frueh-koelsch-24x033l.png" />
             <Card.Body>
@@ -87,46 +129,8 @@ export const rating = () => {
               </Card.Text>
               <Button variant="primary">Rate the Beer</Button>
             </Card.Body>
-          </Card>
+          </Card> */}
         </div>
-
-
-        <div className='cardBody'>
-          {/*Card 1*/}
-          <Card style={{ width: '18rem', margin: '0.25rem'}}>
-            <Card.Img variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK1njt_Dp9inaJf7Te0ViGPCbjunnWWwXo6w&usqp=CAU" />
-            <Card.Body>
-              <Card.Title>Augustiner</Card.Title>
-              <Card.Text>
-                Ein besonders mildes, spritziges, lang gelagertes und vor allem erfrischendes Bier.
-              </Card.Text>
-              <Button variant="primary">Rate the Beer</Button>
-            </Card.Body>
-          </Card>
-          {/*Card 2*/}
-          <Card style={{ width: '18rem', margin: '0.25rem'}}>
-            <Card.Img variant="top" src="https://www.getraenkedienst.com/media/image/4f/c5/31/Tegernseer_Hell_20_x_0_5l.jpg" />
-            <Card.Body>
-              <Card.Title>Tegernseer Hell</Card.Title>
-              <Card.Text>
-                Das typisch bayerische helle Vollbier. Gebraut nach dem bayerischen Reinheitsgebot.
-              </Card.Text>
-              <Button variant="primary">Rate the Beer</Button>
-            </Card.Body>
-          </Card>
-          {/*Card 3*/}
-          <Card style={{ width: '18rem', margin: '0.25rem'}}>
-            <Card.Img variant="top" src="https://www.getraenke-frieling.de/wp-content/uploads/2021/02/frueh-koelsch-24x033l.png" />
-            <Card.Body>
-              <Card.Title>Früh Kölsch</Card.Title>
-              <Card.Text>
-                Das beliebte Bier der Kölner ist mit seinem lecker süffigen Geschmack die kölsche Spezialität.
-              </Card.Text>
-              <Button variant="primary">Rate the Beer</Button>
-            </Card.Body>
-          </Card>
-        </div>
-
 
 
       </div>
@@ -134,4 +138,4 @@ export const rating = () => {
   );
 }
 
-export default rating;
+export default Rating;
