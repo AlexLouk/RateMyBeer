@@ -30,7 +30,6 @@ const Register = () => {
       });
   
       if (response.ok) {
-        const data = await response.json();
         navigate('/login')
         alert("Account created successfully, you can now log in with the account.")
         setErrorMessage("");

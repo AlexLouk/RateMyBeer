@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import './Beers.css';
@@ -46,7 +46,6 @@ const Beers = () => {
         });
         
         if (response.ok) {
-            const data = await response.json();
             alert("Beer was deleted successfully.")
             loadBeers()
         } else {

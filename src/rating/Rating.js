@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 
 const Rating = () => {
-  const { loginInfo } = useContext(AppContext)
   const [beersList, setBeersList] = useState(false)
 
   const loadBeers = async () => {

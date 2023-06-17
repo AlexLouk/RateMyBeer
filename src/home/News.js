@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import './News.css';
-import Button from "react-bootstrap/esm/Button";
 import Card from "react-bootstrap/Card";
 import { AppContext } from "../AppContext";
 import LikeButton from "../components/LikeButton";
@@ -126,7 +125,7 @@ const News = () => {
     return (<div className="news-container">
         {news ? <div>
             <div>
-                <img src={news.news_image} width={"100%"} style={{ objectFit: "cover", margin: "50px 0", borderRadius: "25px" }} />
+                <img alt="" src={news.news_image} width={"100%"} style={{ objectFit: "cover", margin: "50px 0", borderRadius: "25px" }} />
                 <h1>{news.news_title}</h1>
                 <br />
                 <h5>{news.news_text}</h5>

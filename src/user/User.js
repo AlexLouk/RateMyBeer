@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './User.css'
 import '../App.css'
 import { Button } from 'react-bootstrap';
@@ -46,7 +46,7 @@ const User = () => {
         return;
       }
 
-      if (newPassword == currentPassword) {
+      if (newPassword === currentPassword) {
         setErrorMessage("New password can't be same as old password.");
       }
 
@@ -63,7 +63,6 @@ const User = () => {
       });
       
       if (response.ok) {
-        const data = await response.json();
         setErrorMessage("")
         alert("Your password was updated.")
       } else {
@@ -128,7 +127,6 @@ const User = () => {
       });
       
       if (response.ok) {
-        const data = await response.json();
         setPassword("");
         alert("Your account has been deleted.")
         setLoginInfo(defaultLoginInfo)
@@ -179,7 +177,6 @@ const User = () => {
       });
       
       if (response.ok) {
-        const data = await response.json();
         alert("Your name was updated.")
         setLoginInfo({...loginInfo, user_name: newName})
         localStorage.setItem("rmb_user_data", JSON.stringify({...JSON.parse(localStorage.getItem("rmb_user_data")), user_name: newName}))

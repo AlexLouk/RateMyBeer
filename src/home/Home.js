@@ -1,4 +1,4 @@
-import React, { Component, useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import './Home.css';
 import { Link } from 'react-router-dom'
@@ -16,15 +16,14 @@ function News() {
 			news_title,
 			news_text,
 			news_date,
-			news_image,
-			news_liked
+			news_image
 		} = props
 
 		const formattedNewsDate = (new Date(news_date)).toLocaleDateString()
 
 		return <div className='news-boxes'>
 			<Link to={'/news/' + news_id}>
-				<img src={news_image} width={"100%"} height={150} style={{ objectFit: "cover" }} />
+				<img alt="" src={news_image} width={"100%"} height={150} style={{ objectFit: "cover" }} />
 				<h2 className='news-title'>{news_title}</h2>
 				<h3 className='news-content'>{news_text}</h3>
 			</Link>

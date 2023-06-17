@@ -1,4 +1,4 @@
-import { Routes, Route, useParams, BrowserRouter } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import './Beers.css'
 import Card from 'react-bootstrap/Card'
 import { useContext, useEffect, useState } from 'react';
@@ -111,12 +111,12 @@ function ViewBeer() {
     }
     
     const RateBeer = () => {
-        var hasUserRated = ratings && ratings.find(rating => rating.user_id == loginInfo?.user_id)
+        var hasUserRated = ratings && ratings.find(rating => rating.user_id === loginInfo?.user_id)
         
         return (
             <div>
                 <div style={{padding: 25}}>
-                    {ratings ? <><h2>{ratings.length == 0 ? "No ratings to show" : "Ratings"}</h2>{ratings.map(rating => {
+                    {ratings ? <><h2>{ratings.length === 0 ? "No ratings to show" : "Ratings"}</h2>{ratings.map(rating => {
                         return (
                             <Card key={rating.rating_id} style={{background: "#ffffff22", width: "30%", display: "inline-block", margin: 5}}>
                                 <Card.Header>
@@ -170,7 +170,7 @@ function ViewBeer() {
             <div>
                 <div>
                     {beer ? <div className='beer-section' style={{display: "flex", flexDirection: "row"}}>
-                        <img src={beer.beer_image} height={300} width={300} style={{objectFit: "cover", borderRadius: "25px"}} />
+                        <img alt="" src={beer.beer_image} height={300} width={300} style={{objectFit: "cover", borderRadius: "25px"}} />
                         <div style={{padding: 25}}>
                             <h1>{beer.beer_name}</h1>
                             {!beer.is_approved && <span style={{color: "red"}}>Pending Approval</span>}

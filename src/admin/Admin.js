@@ -31,7 +31,6 @@ const Admin = () => {
             });
 
             if (response.ok) {
-                const data = await response.json();
                 alert(`User ${username} was deleted successfully`)
             } else {
                 const errorData = await response.json();
@@ -102,7 +101,6 @@ const Admin = () => {
             });
 
             if (response.ok) {
-                const data = await response.json();
                 alert("Beer was approved.")
                 loadBeers()
             } else {
@@ -126,7 +124,6 @@ const Admin = () => {
             });
 
             if (response.ok) {
-                const data = await response.json();
                 alert("Beer was deleted successfully.")
                 loadBeers()
             } else {
@@ -151,7 +148,7 @@ const Admin = () => {
                         {beersList.map(beer => (
                             <tr key={beer.beer_id}>
                                 <td>
-                                    <img style={{ borderWidth: "2px", borderColor: "#88888888", borderStyle: "solid", padding: 0, borderRadius: "10px" }} src={beer.beer_image} height={100} width={100} />
+                                    <img alt="" style={{ borderWidth: "2px", borderColor: "#88888888", borderStyle: "solid", padding: 0, borderRadius: "10px" }} src={beer.beer_image} height={100} width={100} />
                                 </td>
                                 <td>{beer.beer_name}</td>
                                 <td>{beer.is_approved ? "Approved" : "Pending approval"}</td>
@@ -248,7 +245,7 @@ const Admin = () => {
         }
 
         const deleteRow = (row) => {
-            setFaqs(faqs.filter((faq, i) => i != row))
+            setFaqs(faqs.filter((faq, i) => i !== row))
             setEdited(true)
         }
 
@@ -289,7 +286,6 @@ const Admin = () => {
             });
 
             if (response.ok) {
-                const data = await response.json();
                 alert("FAQs saved.")
                 setEdited(false)
                 loadFAQs(true)
