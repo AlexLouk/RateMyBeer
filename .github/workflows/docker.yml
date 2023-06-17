@@ -31,7 +31,7 @@ jobs:
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
         
       - name: Build Docker image
-        run: docker build . --file Dockerfile --tag alexlouk/frontend:${{latest}}
+        run: docker build . --file Dockerfile --tag alexlouk/frontend
         
       - name: Push to Docker Hub
-        run: docker push alexlouk/frontend:${{latest}}
+        run: docker push alexlouk/frontend
