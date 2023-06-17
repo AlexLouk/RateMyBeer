@@ -222,10 +222,127 @@ const Admin = () => {
         </div>
     }
 
+    const EditFAQs = () => {
+        const [faqs, setFaqs] = useState(false)
+        const [loading, setLoading] = useState(false)
+        const [edited, setEdited] = useState(false)
+
+        const loadFAQs = async (force) => {
+            if (faqs && !force) return
+            setFaqs(false)
+
+            const response = await fetch('http://localhost:3001/faqs', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                setFaqs(data)
+            } else {
+                const errorData = await response.json();
+                console.error('Error:', errorData);
+            }
+        }
+
+        const deleteRow = (row) => {
+            setFaqs(faqs.filter((faq, i) => i != row))
+            setEdited(true)
+        }
+
+        const setCellValue = (row, field, value) => {
+            var newFaqs = faqs
+            newFaqs[row][field] = value
+
+            setFaqs([...newFaqs])
+            setEdited(true)
+        }
+
+        const addRow = () => {
+            setFaqs([...faqs, {
+                faq_id: 0,
+                faq_title: "",
+                faq_text: ""
+            }])
+            setEdited(true)
+        }
+
+        const saveFAQs = async () => {
+            setLoading("Saving FAQs")
+
+            const faqToSend = faqs.map((faq, i) => {
+                return {
+                    ...faq,
+                    faq_id: i + 1
+                }
+            })
+
+            const response = await fetch('http://localhost:3001/faqs/save', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${loginInfo.token}`,
+                },
+                body: JSON.stringify({ faqs: faqToSend }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                alert("FAQs saved.")
+                setEdited(false)
+                loadFAQs(true)
+            } else {
+                const errorData = await response.json();
+                console.error('Error:', errorData);
+            }
+            setLoading(false)
+        }
+
+        useEffect(() => {
+            loadFAQs()
+        }, [])
+
+        return (
+            <div className='admin-section' style={{ minWidth: "100%" }}>
+                <h3>Edit FAQs</h3>
+                {faqs ? <><table width={"100%"}>
+                    <thead>
+                        <tr>
+                            <th width="10%"></th>
+                            <th width="5%">ID</th>
+                            <th width="25%">Question</th>
+                            <th width="60%">Answer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {faqs.map((faq, i) => {
+                            return <tr key={i}>
+                                <td><Button variant="outline-danger" onClick={() => deleteRow(i)}>Delete</Button></td>
+                                <td>{i + 1}</td>
+                                <td><input type='text' className='form-control' onChange={(event) => setCellValue(i, "faq_title", event.target.value)} value={faq.faq_title} /></td>
+                                <td><input type='text' className='form-control' onChange={(event) => setCellValue(i, "faq_text", event.target.value)} value={faq.faq_text} /></td>
+                            </tr>
+
+                        })}
+                    </tbody>
+
+                </table><div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", width: "100%" }}>
+                        <Button variant='outline-primary btn-sm' onClick={addRow} disabled={loading}>+ Add row</Button>
+                        <Button style={{ float: "right" }} onClick={saveFAQs} hidden={!edited} disabled={loading}>{loading || "Save FAQs"}</Button>
+                    </div></> : "Loading FAQs"}
+            </div>
+        )
+    }
+
     return (
         <div className='admin-container'>
             <div>
                 <h2>Admin panel</h2>
+                <div className='admin-sections-center'>
+                    <EditFAQs />
+                </div>
 
                 <div className='admin-sections-center'>
                     <DeleteUserSection />
