@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import './Admin.css';
 import { AppContext } from '../AppContext';
-import Table from 'react-bootstrap/esm/Table';
-import Button from 'react-bootstrap/esm/Button';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 const Admin = () => {
     const { loginInfo } = useContext(AppContext)
