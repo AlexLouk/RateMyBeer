@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import logo from '../logos/favicon-32x32.png';
 import './Navbar.css'
 import { AppContext } from '../AppContext';
+import SearchBar from './SearchBar';
 
 const Navigation = (props) => {
     const { loginInfo } = useContext(AppContext)
@@ -16,34 +17,45 @@ const Navigation = (props) => {
     }, [loginInfo])
 
     return (
-        <Navbar bg="light" >
-            <Navbar.Brand className='ml-auto' as={Link} to={'/'}>
-                <img id='navLogo' alt='' src={logo} width='50' height='50' />
-                RateMyBeer
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-                <div className='midBlock'>
-                    <Nav className="ms-auto">
-                        <Nav.Link className='nav-link-mid' as={Link} to={'/'}>Home</Nav.Link>
-                        <Nav.Link className='nav-link-mid' as={Link} to={'/rating'}>Rating</Nav.Link>
-                        <Nav.Link className='nav-link-mid' as={Link} to={'/about'} >About</Nav.Link>
-                        <Nav.Link className='nav-link-mid' as={Link} to={'/faqs'}>FAQs</Nav.Link>
-                        <Nav.Link className='nav-link-mid' as={Link} to={'/game'}>Quiz</Nav.Link>
-                    </Nav>
+        <div bg="light" className='nav-groups'>
+
+            <div>
+                <Navbar.Brand className='ml-auto' as={Link} to={'/'}>
+                    <img id='navLogo' alt='' src={logo} width='50' height='50' />
+                    RateMyBeer
+                </Navbar.Brand>
+                <div className='nav-menu'>
+                    <Nav.Link className='nav-link-mid' as={Link} to={'/'}>Home</Nav.Link>
+                    {isLoggedIn && <Nav.Link className='nav-link-mid' as={Link} to={'/beers'}>Beers</Nav.Link>}
+                    <Nav.Link className='nav-link-mid' as={Link} to={'/rating'}>Rating</Nav.Link>
+                    <Nav.Link className='nav-link-mid' as={Link} to={'/about'} >About</Nav.Link>
+                    <Nav.Link className='nav-link-mid' as={Link} to={'/faqs'}>FAQs</Nav.Link>
+                    <Nav.Link className='nav-link-mid' as={Link} to={'/game'}>Quiz</Nav.Link>
                 </div>
-                <div className='rightBlock'>
-                    <Nav className="ms-auto">
-                        {loginInfo.user_is_admin && <Nav.Link className='nav-link-right' as={Link} to={'/admin'}>Admin Panel</Nav.Link>}
-                        {isLoggedIn ? <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>{loginInfo.user_name}</Nav.Link>
-                            : <><Nav.Link className='nav-link-right' as={Link} to={'/login'}>Login</Nav.Link>
-                                <Nav.Link className='nav-link-right' as={Link} to={'/register'}>Register</Nav.Link></>
-                        }
-                    </Nav>
+            </div>
+            <div>
+                <div className='nav-menu'>
+                    <SearchBar />
+                    {loginInfo.user_is_admin && <Nav.Link className='nav-link-right' as={Link} to={'/admin'}>Admin Panel</Nav.Link>}
+                    {isLoggedIn ? <Nav.Link className='nav-link-mid' as={Link} to={'/user'}>{loginInfo.user_name}</Nav.Link>
+                        : <><Nav.Link className='nav-link-right' as={Link} to={'/login'}>Login</Nav.Link>
+                            <Nav.Link className='nav-link-right' as={Link} to={'/register'}>Register</Nav.Link></>
+                    }
                 </div>
-            </Navbar.Collapse>
-        </Navbar>
+            </div>
+        </div>
     );
 }
 
 export default Navigation;
+
+
+
+
+
+
+
+
+
+
+

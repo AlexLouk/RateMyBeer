@@ -9,6 +9,7 @@ import About from './about/About';
 import Login from './login/Login';
 import Register from './login/Register';
 import FAQs from './FAQs/FAQs';
+import Search from './Search/Search';
 import {
   BrowserRouter as Router,
   Routes,
@@ -76,6 +77,7 @@ function App() {
             <Route path="/beers/:beerId" element={<ViewBeer />} />
             <Route path="/news/:newsId" element={<News />} />
             <Route path="/FAQs" element={<FAQs />} />\
+            <Route path="/search/:searchQuery" element={<Search />} />\
             <Route path="/admin" element={<Admin />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />

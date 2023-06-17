@@ -5,12 +5,43 @@
 
 .navbar-brand {
   font-size: 20px;
-  margin-right: 10px;
-  margin-left: 30px;
+  margin: 15px;
 }
 
-.midBlock{
-  margin-right: 550px;
+.nav-groups {
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-groups>div {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-menu>* {
+  margin: 15px;
+}
+
+.nav-search {
+  background-color: #ffffff22;
+  border: 1px solid #ffffff44;
+  outline: none;
+  padding: 4px 12px;
+}
+
+.nav-search:focus {
+  background-color: white;
+  border: 1px solid blue;
 }
 
 .nav-link-mid {
@@ -24,7 +55,3 @@
   font-size: 20px;
   color: black;
 }
-
-
-
-
