@@ -25,7 +25,7 @@ jobs:
         run: yarn install --frozen-lockfile
       
       - name: Build
-        run: yarn build
+        run: yarn build --no-warnings
         
       - name: Login to DockerHub Registry
         run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
