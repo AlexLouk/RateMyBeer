@@ -58,7 +58,7 @@ const Game = () => {
                 },
                 body: JSON.stringify({
                     question: newQuestion,
-                    answers: JSON.stringify(newAnswers), // JSON serialisieren
+                    answers: newAnswers,
                     correctAnswer: newCorrectAnswer,
                 }),
             });
@@ -96,11 +96,7 @@ const Game = () => {
                 ))}
             </ul>
 
-            <button
-                onClick={checkAnswer}
-                disabled={selectedAnswer === null}
-                className="check-answer-button"
-            >
+            <button onClick={checkAnswer} disabled={selectedAnswer === null} className="check-answer-button">
                 Check Antwort
             </button>
 
