@@ -1,4 +1,4 @@
-import Button from "react-bootstrap/esm/Button"
+import Button from "react-bootstrap/Button"
 
 const { useState, useContext, useEffect } = require("react")
 const { AppContext } = require("../AppContext")

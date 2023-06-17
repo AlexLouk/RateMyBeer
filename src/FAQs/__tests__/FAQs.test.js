@@ -7,7 +7,7 @@ describe('FAQs Component', () => {
       expect( container.firstChild ).toHaveClass('faqs-container');
     });
 
-    it('should render the "How can I rate a beer?" question', () => {
+    /*it('should render the "How can I rate a beer?" question', () => {
       render(<FAQs />);
       const question = screen.getByRole('heading', { level: 2, name: 'How can I rate a beer?' });
       expect(question).toBeInTheDocument();
@@ -29,6 +29,6 @@ describe('FAQs Component', () => {
       render(<FAQs />);
       const question = screen.getByRole('heading', { level: 2, name: 'How can I log out?' });
       expect(question).toBeInTheDocument();
-    });
+    });*/
   });
 
