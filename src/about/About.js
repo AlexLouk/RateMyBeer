@@ -13,7 +13,7 @@ class About extends Component {
                 </div>
                 <div className='member'>
                     <Card style={{ width: '15rem', margin: '15px', border: 'none', backgroundColor: 'rgb(251, 155, 42, 255)'}}>
-                        <Card.Img variant="top" src="https://media.licdn.com/dms/image/C4E03AQEjJkz5DtyjTA/profile-displayphoto-shrink_800_800/0/1656281739258?e=2147483647&v=beta&t=jtjJz6g2ZPiEGmLz1J-CF4On5_xAMmdFtvv9SPhY5b4" />
+                        <Card.Img variant="top" src="https://i1.sndcdn.com/artworks-000157336402-fn3g63-t500x500.jpg" />
                         <Card.Body>
                         <Card.Title>Taner Görgün</Card.Title>
                             <Card.Text style={{ marginTop: '0.5rem' }}>
@@ -22,7 +22,7 @@ class About extends Component {
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem', margin: '15px', border: 'none', backgroundColor: 'rgb(251, 155, 42, 255)'}}>
-                        <Card.Img variant="top" src="https://profile-images.xing.com/images/0ca32c464d901114ebbde8733b175172-2/robin-zeiler.1024x1024.jpg" />
+                        <Card.Img variant="top" src="https://img.welt.de/img/sport/mobile235100156/5332507217-ci102l-w1024/DARTS.jpg" />
                         <Card.Body>
                             <Card.Title>Robin Zeiler</Card.Title>
                             <Card.Text style={{ marginTop: '0.5rem' }}>
@@ -31,7 +31,7 @@ class About extends Component {
                         </Card.Body>
                     </Card>
                     <Card style={{ width: '15rem', margin: '15px', border: 'none', backgroundColor: 'rgb(251, 155, 42, 255)'}}>
-                        <Card.Img variant="top" src="https://profile-images.xing.com/images/b130cfe7181d45d0739033aea73a08bd-3/alexandros-loukaridis.1024x1024.jpg" />
+                        <Card.Img variant="top" src="https://image.geo.de/32852340/t/aL/v9/w1440/r1/-/aufmacher.jpg" />
                         <Card.Body>
                             <Card.Title>Alexandros Loukaridis</Card.Title>
                             <Card.Text style={{ marginTop: '0.5rem' }}>
