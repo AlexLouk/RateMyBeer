@@ -23,7 +23,7 @@ jobs:
         uses: docker/setup-buildx-action@v2
       -
         name: Build image
-        run: docker build --file Dockerfile --tag alexlouk/ratemybeer-react .
+        run: docker build --file Dockerfile --tag alexlouk/frontend:latest .
         
       -
         name: Push Image to Docker repo
