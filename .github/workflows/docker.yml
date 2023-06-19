@@ -25,3 +25,6 @@ jobs:
         name: Build image
         run: docker build --file Dockerfile --tag alexlouk/ratemybeer-react .
         
+      -
+        name: Push Image to Docker repo
+        run: docker push alexlouk/frontend:latest
