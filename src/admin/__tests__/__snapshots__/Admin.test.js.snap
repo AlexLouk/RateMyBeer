@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Admin> should render component 1`] = `
+<div
+  className="admin-container"
+>
+  <div>
+    <h2>
+      Admin panel
+    </h2>
+    <div
+      className="admin-sections-center"
+    >
+      <div
+        className="admin-section"
+        style={
+          Object {
+            "minWidth": "100%",
+          }
+        }
+      >
+        <h3>
+          Edit FAQs
+        </h3>
+        Loading FAQs
+      </div>
+    </div>
+    <div
+      className="admin-sections-center"
+    >
+      <div
+        className="admin-section"
+      >
+        <h2>
+          Delete user
+        </h2>
+        <form
+          className="admin-sections-center"
+          onSubmit={[Function]}
+          style={
+            Object {
+              "flexDirection": "column",
+            }
+          }
+        >
+          <label>
+            Enter username to delete:
+          </label>
+          <input
+            onChange={[Function]}
+            placeholder="Username"
+            type="text"
+            value=""
+          />
+          <button
+            className="form-button red"
+            disabled={false}
+          >
+            Delete user
+          </button>
+        </form>
+      </div>
+      <div
+        className="admin-section"
+      >
+        <h3>
+          Approve user beers
+        </h3>
+        Loading beers...
+      </div>
+      <div
+        className="admin-section"
+      >
+        <h3>
+          Post news
+        </h3>
+        <form
+          onSubmit={[Function]}
+        >
+          <input
+            className="form-control"
+            onChange={[Function]}
+            placeholder="Title"
+            required={true}
+            type="text"
+            value=""
+          />
+          <textarea
+            className="form-control"
+            onChange={[Function]}
+            placeholder="Text"
+            required={true}
+            value=""
+          />
+          <input
+            className="form-control"
+            onChange={[Function]}
+            placeholder="Image URL"
+            required={true}
+            type="text"
+            value=""
+          />
+          <input
+            className="form-control"
+            onChange={[Function]}
+            placeholder="Date"
+            required={true}
+            type="date"
+            value="2023-06-20"
+          />
+          <input
+            className="form-control btn btn-primary"
+            disabled={false}
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+`;
